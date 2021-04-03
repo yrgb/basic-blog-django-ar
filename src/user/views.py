@@ -5,7 +5,7 @@ from django.contrib.auth import login, authenticate, logout
 from blog.models import Post
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-
+from django.contrib.auth.models import User
 
 def register(request):
     if request.method == 'POST':
@@ -81,6 +81,11 @@ def profile_update(request):
         if user_form.is_valid and profile_form.is_valid:
             user_form.save()
             profile_form.save()
+
+            u = User.objects.get(username=request.user)
+            u.set_password(request.POST['password'])
+            u.save()
+
             messages.success(
                 request, 'تم تحديث الملف الشخصي.')
             return redirect('profile')

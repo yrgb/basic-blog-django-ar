@@ -46,10 +46,12 @@ class UserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(label='الاسم الأول')
     last_name = forms.CharField(label='الاسم الأخير')
     email = forms.EmailField(label='البريد الإلكتروني')
+    password = forms.CharField(
+        label='كلمة المرور', widget=forms.PasswordInput(), min_length=8)
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email')
+        fields = ('first_name', 'last_name', 'email','password')
 
 
 class ProfileUpdateForm(forms.ModelForm):
