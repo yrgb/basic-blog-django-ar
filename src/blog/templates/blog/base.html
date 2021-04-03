@@ -1,4 +1,5 @@
 {% load static %}
+{% load post_tag %}
 <!DOCTYPE html>
 
 <html lang="ar">
@@ -75,12 +76,12 @@
                 <div class="col-md-4">
                     <div class="card mb-3">
                         <h3 class="text-center bg-secondary text-light p-2">آخر التدوينات</h3>
-
+                        {% latest_posts %}
 
                     </div>
                     <div class="card mb-3">
                         <h3 class="text-center bg-secondary text-light p-2">آخر التعليقات</h3>
-
+                        {% latest_comments %}
                     </div>
                 </div>
             </div>

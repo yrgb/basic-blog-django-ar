@@ -25,7 +25,6 @@ body{
     background-color: #EEE !important;
 }
 
-
 /* Start Sidebar */
 .latest-post, .latest-comment{
     padding: 0 15px;
@@ -45,3 +44,18 @@ body{
 }
 
 /* End Sidebar */
+
+/* Start Comment */
+.comment{
+    background-color: #f8f8f8;
+    border: 1px dashed #CCC;
+}
+/* End Comment */
+
+.btn-editing{
+    float: left;
+}
+
+.back-btn{
+    float: left;
+}
