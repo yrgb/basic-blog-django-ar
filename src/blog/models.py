@@ -13,6 +13,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        # return '/detail/{}'.format(self.pk)
+        return reverse('detail', args=[self.pk])
 
     class Meta:
         ordering = ('-post_date', )
