@@ -72,12 +72,12 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     form_class = PostCreateForm
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.author = self.get_object().author
         return super().form_valid(form)
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
+        if self.request.user == post.author or self.request.user.is_superuser:
             return True
         else:
             return False
@@ -89,6 +89,6 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
+        if self.request.user == post.author or self.request.user.is_superuser:
             return True
         return False
