@@ -8,6 +8,7 @@ This web application creates a basic blog site using Django framework. This blog
     <li>Bootstrap v4.0.0</li>
     <li>jQuery 3.6.0</li>
     <li>django-crispy-forms 1.11.2</li>
+    <li>Pillow 8.2.0</li>
 </ul>
 
 
