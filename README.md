@@ -21,4 +21,4 @@ This web application creates a basic blog site using Django framework. This blog
 - Comments
 - User Change Password
 
-(reference)[https://github.com/aabouissa/blog-django-ar/tree/master/src/blog]
+[reference](https://github.com/aabouissa/blog-django-ar/tree/master/src/blog)
